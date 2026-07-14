@@ -105,12 +105,12 @@ Made a mistake? Cancel with `scancel <JOBID>` and resubmit.
 When the job finishes you'll find two files in the directory, named after
 the job ID:
 
-**Standard output (`slurm-4815162.out`)** — the simulation's own output:
+**Standard output (`gravity-4815162.out`)** — the simulation's own output:
 an ASCII snapshot of the particle cloud (yes, really — enjoy it) followed
 by a `Results` block:
 
 ```bash
-cat slurm-*.out
+cat gravity-*.out
 ```
 
 ```
@@ -129,11 +129,11 @@ The two numbers you need are **Wall time** (here `84.15`) and
 throughput. Ignore the `Throughput` line in particle-steps/s; we're
 collecting the Force rate.
 
-**Standard error (`slurm-4815162.err`)** — the meta details: which variables
+**Standard error (`gravity-4815162.err`)** — the meta details: which variables
 you ran with and which cores/NUMA domains the job was pinned to:
 
 ```bash
-cat slurm-*.err
+cat gravity-*.err
 ```
 
 You need **four values** for your submission: your `NUM_CORES`, your
@@ -251,6 +251,6 @@ Watch the live chart with these in mind — we'll discuss as the results fill in
 sbatch submit.sh          # submit the job
 squeue -u $USER           # check your jobs in the queue
 scancel <JOBID>           # cancel a job
-cat slurm-<JOBID>.out     # simulation output (Wall time + Force rate in Results block)
-cat slurm-<JOBID>.err     # run configuration and core/NUMA pinning
+cat gravity-<JOBID>.out     # simulation output (Wall time + Force rate in Results block)
+cat gravity-<JOBID>.err     # run configuration and core/NUMA pinning
 ```
