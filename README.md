@@ -67,6 +67,13 @@ spot — and it may *move* depending on how many cores you have.
 We'll assign combinations around the room so we cover the whole grid.
 When in doubt: pick a pair nobody has claimed yet.
 
+You will also need to update this line in the job script to use the real 
+allocation (aka account) name:
+
+```
+#SBATCH --account=YOUR_ALLOCATION   # <-- EDIT: your ACCESS allocation
+```
+
 ## 4. Submit the job and watch the queue
 
 Submit:
