@@ -41,9 +41,9 @@ cd pearc26-gravity-simulation
 
 Everything you need is in here. The two files that matter:
 
-| File        | What it is                                                    |
-|-------------|---------------------------------------------------------------|
-| `sim.py`    | The simulation. You don't need to edit it (but do peek inside). |
+| File        | What it is                                                        |
+|-------------|-------------------------------------------------------------------|
+| `sim.py`    | The simulation. You don't need to edit it (but do peek inside).   |
 | `submit.sh` | The Slurm job script you'll submit. **You edit the top of this.** |
 
 ## 3. Your two knobs
@@ -248,9 +248,9 @@ Watch the live chart with these in mind — we'll discuss as the results fill in
 ## Quick reference
 
 ```bash
-sbatch submit.sh          # submit the job
-squeue -u $USER           # check your jobs in the queue
-scancel <JOBID>           # cancel a job
+sbatch submit.sh            # submit the job
+squeue -u $USER             # check your jobs in the queue
+scancel <JOBID>             # cancel a job
 cat gravity-<JOBID>.out     # simulation output (Wall time + Force rate in Results block)
 cat gravity-<JOBID>.err     # run configuration and core/NUMA pinning
 ```
