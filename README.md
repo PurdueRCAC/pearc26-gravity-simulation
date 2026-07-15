@@ -91,17 +91,17 @@ Submitted batch job 4815162
 Watch your job in the queue:
 
 ```bash
-squeue -u $USER
+squeue --me
 ```
 
 ```
-   JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
- 4815162 PARTITION  gravity  yourid PD       0:00      1 (Priority)
+JOBID        USER      ACCOUNT       NAME     NODES    CPUS     TIME_LIMIT   ST   TIME
+19257550   x-user    <account>    gravity         1     128          30:00    R   0:15
 ```
 
 The `ST` column is the state: `PD` = pending (waiting for resources),
 `R` = running. Re-run `squeue -u $USER` to refresh — or use
-`watch -n 5 squeue -u $USER` to auto-refresh every 5 seconds (Ctrl-C to exit).
+`watch -n 5 squeue --me` to auto-refresh every 5 seconds (Ctrl-C to exit).
 When your job disappears from the list, it's done. Small jobs here take on the
 order of a minute or two to run.
 
